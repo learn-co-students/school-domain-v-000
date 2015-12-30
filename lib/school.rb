@@ -1,11 +1,14 @@
 # code here!
 class School
+	def roster
+		@roster
+	end
 	def initialize(school)
 		@school = school
-		@roster = Hash.new([])
+		@roster = {}
 	end
 	def add_student(name, grade)
-		@roster[grade] << name
+		@roster[grade].nil? ? @roster[grade] = name : roster[grade] << name
 	end
 	def grade(grade)
 		@roster[grade]
