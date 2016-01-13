@@ -22,6 +22,6 @@ class School
   end
 
   def sort
-    sorted_hash = Hash[@roster.sort.map { |key, value| [key, value.sort]}]
+    Hash[@roster.sort.map { |key, value| [key, value.sort]}]
   end
 end
