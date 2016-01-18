@@ -5,8 +5,17 @@ class School
     @roster = {}
   end
   def add_student(student_name, grade)
-    roster[grade] ||= []
-    roster[grade] << student_name
+
+    if roster.has_key?(grade)
+        roster[grade] << student_name
+      else
+        roster[grade] = []
+        roster[grade] << student_name
+    end
+      
+  
+    # roster[grade] ||= []
+    # roster[grade] << student_name
   end
   def grade(stus_grade)
     roster[stus_grade]
