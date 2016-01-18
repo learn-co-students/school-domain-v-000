@@ -18,9 +18,11 @@ class School
   end
 
   def grade(grade)
-    @roster.each do |grades, students|
-      return students if grade == grades
-    end
+    #@roster.each do |grades, students|
+      #return students if grade == grades
+
+      #refactored above code to the following:
+      @roster[grade]
   end
 
   def sort
