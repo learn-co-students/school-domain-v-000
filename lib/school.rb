@@ -21,9 +21,14 @@ class School
   end
 
   def sort
-    roster.map{|key, value| value.sort!}
-    roster.sort_by {|k, v| k }.to_h
+    roster.each{|key, value| value.sort!}
   end
+
+###### This method returns with grade in order as well #####
+  #def sort
+  #  roster.map{|key, value| value.sort!}
+  #  roster.sort_by {|k, v| k }.to_h
+  #end
   
   
 end
