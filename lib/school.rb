@@ -1,13 +1,17 @@
 class School
 
+  
   attr_accessor :grade
   attr_reader :name
 
-  roster[:name] = []
-  roster[:name] << :grade
+  
+  def initialize(roster)
+    @roster = {}
+     
+  end
 
-  def initialize(name)
-    @aname = name
+  def add_student
+    @roster << self
   end
 
 end
