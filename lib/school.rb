@@ -11,12 +11,16 @@ class School
   end
 
   def add_student(name, grade)
-   # if grade.match(@roster[grade])
-    #  @roster[grade] << name
-    #else
-    @roster[grade] = []
-    @roster[grade] << name
-  #end
+    @roster.each do |name, grade|
+      grade.each do |g|
+        if g == :grade
+          @roster[:grade] << name
+        else
+          @roster[grade] = []
+          @roster[grade] << name
+        end
+      end
+    end
   end
 
   def grade(grade)
