@@ -1,4 +1,8 @@
-class School
+class School #{
+  #7 => ["Blake Johnson", "Jack Bauer"], 
+  #9 => ["Bart Simpson", "Homer Simpson"], 
+  #10 => ["Avi Flombaum", "Jeff Baird"]
+#}
 
   
   attr_accessor :name, :grade
@@ -11,23 +15,21 @@ class School
   end
 
   def add_student(name, grade)
-    @roster.each do |name, grade|
-      grade.each do |g|
-        if g == :grade
-          @roster[:grade] << name
+    if @roster.has_key?(grade)
+          @roster[grade] << name
         else
           @roster[grade] = []
           @roster[grade] << name
-        end
-      end
     end
   end
 
   def grade(grade)
+    @roster[grade]
   end
 
   def sort
-    @roster.sort()
+    #@roster.sort_by &:first
+    @roster.sort.to_h
   end
 
 end
