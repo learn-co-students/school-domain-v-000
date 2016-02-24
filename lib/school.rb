@@ -28,8 +28,10 @@ class School #{
   end
 
   def sort
-    #@roster.sort_by &:first
-    @roster.sort.to_h
+    @roster.each do |key, value|
+      @roster[key] = value.sort
+    end
+      @roster.sort.to_h
   end
 
 end
