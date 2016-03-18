@@ -1,7 +1,8 @@
 # code here!
-
+require "pry"
 class School
   attr_reader :name, :roster
+
   def initialize(name)
     @name = name
     @roster = {}
@@ -10,6 +11,15 @@ class School
   def add_student(name, grade)
     @name = name
     @grade = grade
-    grade[name] = []
+    @roster[@grade] = [] unless @roster.include?(@grade)
+    @roster[@grade] << @name
+  end
+
+  def grade(grade)
+    @roster[grade]
+  end
+
+  def sort
+    @roster.values.sort!
   end
 end
