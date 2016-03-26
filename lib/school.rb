@@ -1,30 +1,25 @@
-require 'pry'
-
 class School
+  attr_accessor :name, :roster
   def initialize(name)
     @name = name
-    @hash = {}
-  end
-
-  def roster
-    @hash
+    @roster = {}
   end
 
   def add_student(name, grade)
-    if !@hash.include?(grade)
-      @hash[grade] = []
-      @hash[grade] << name
+    if !@roster.include?(grade)
+      @roster[grade] = []
+      @roster[grade] << name
     else
-      @hash[grade] << name
+      @roster[grade] << name
     end
   end
 
   def grade(grade)
-    @hash[grade]
+    @roster[grade]
   end
 
   def sort
-    @hash.each do |grade, name|
+    @roster.each do |grade, name|
       name.sort!
     end
   end
