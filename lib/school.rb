@@ -29,7 +29,6 @@ class School
 			v.flatten
 			index +=1
  		end
- 		roster.sort.to_h
 	end
 end
 	  school = School.new("Test School")
