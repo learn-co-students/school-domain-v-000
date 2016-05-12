@@ -9,6 +9,7 @@ class School
   def add_student(student, grade)
     # @roster[grade] = [] unless @roster.include?(grade)
     roster[grade] ||= [] # a||=b if a is nil, false, or undefined, evaluate b and set a to the return of b.
+    #if roster[grade] is undefine, evaluate [] and set a to the returnv value of []
     roster[grade] << student
   end
 
@@ -16,11 +17,15 @@ class School
     roster[grade]
   end
 
+  # this method should arrange the students in each grade by alphabetical order
   def sort
-    sorted ||= roster
-    sorted.keys.map { |grade| sorted[grade].sort! }
+    sorted = {}
+    roster.each do |grade, students| # roster hash with key/value pair: grade/students
+      sorted[grade] = students.sort
+    end
     sorted
   end
+end
 
 end
 
