@@ -1,7 +1,7 @@
 # code here!
 
 class School
-  #attr_accessor :student
+  
   attr_reader :name
 
   def initialize (name)
@@ -14,8 +14,12 @@ class School
   end
 
   def add_student(student, grade)
-      roster[grade]=[]
-      roster[grade] << student
+      if roster.has_key?(grade)
+        roster[grade] << student
+      else
+        roster[grade]=[]
+        roster[grade] << student
+      end
   end
 
 
