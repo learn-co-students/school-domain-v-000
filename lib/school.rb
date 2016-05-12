@@ -3,22 +3,28 @@
 class School
   
   attr_reader :name
+  attr_accessor :roster
 
   def initialize (name)
     @name = name
-  end
-
-  def roster
     roster ={}
     @roster = roster
   end
 
   def add_student(student, grade)
       roster[grade] ||= []
-      roster[grade] << student
-      
+      roster[grade] << student 
   end
 
+  def grade(grade_level)
+    roster[grade_level]
+  end
+
+  def sort
+    roster[grade].each do |grade,student|
+      roster[grade] = student.sort
+    end
+  end
 
 
 end # of class School
