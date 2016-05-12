@@ -7,35 +7,18 @@ class School
   end
 
   def add_student(student, grade)
-    @roster[grade] = [] unless @roster.include?(grade)
-    @roster[grade] << student
+    roster[grade] ||= []
+    roster[grade] << student
   end
 
   def grade(grade)
-    @roster[grade]
+    roster[grade]
   end
 
   def sort
-    @roster.keys.map { |grade| @roster[grade].sort! }
-    @roster
+    sorted ||= roster
+    sorted.keys.map { |grade| sorted[grade].sort! }
+    sorted
   end
 
 end
-
-# school = School.new("Bayside High School")
-# school.roster
-#
-# school.add_student("Zach Morris", 9)
-# school.roster
-#
-# school.add_student("AC Slater", 9)
-# school.add_student("Kelly Kapowski", 10)
-# school.add_student("Screech", 11)
-# school.roster
-# # => {9 => ["Zach Morris", "AC Slater"], 10 => ["Kelly Kapowski"], 11 => ["Screech"]}
-#
-# school.grade(9)
-# # => ["Zach Morris", "AC Slater"]
-#
-# school.sort
-# # => {9 => ["AC Slater", "Zach Morris"], 10 => ["Aardvark", "Kelly Kapowski"], 11 => ["Screech", "Xavier"]}
