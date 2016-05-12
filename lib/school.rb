@@ -21,11 +21,43 @@ class School
   end
 
   def sort
-    roster[grade].each do |grade,student|
-      roster[grade] = student.sort
+    roster.each do |grade, student|
+      roster[grade] = student.sort!
     end
-    @roster
+    roster
   end
-
-
 end # of class School
+
+
+#Sort method was difficult to pass.  The following are several attempts that failed
+#
+# Original
+#   def sort
+#     roster[grade].each do |student|
+#       student.sort
+#     end
+#   end
+
+# Version2
+#   def sort
+#     roster[grade,student].each do |student|
+#       student.sort!
+#     end
+#   end
+
+# Version3
+#   def sort
+#     roster[grade].each do |grade,student|
+#       student.sort!
+#     end
+#   end
+
+# Final
+#     def sort
+#         roster.each do |grade, student|
+#           roster[grade] = student.sort!
+#         end
+#         roster
+#     end
+
+
