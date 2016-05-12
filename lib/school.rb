@@ -14,10 +14,13 @@ class School
   end
 
   def add_student(student, grade)
-      if roster.has_key?(grade)
+      if roster.empty?
+        roster[grade_level] = []
+        roster[grade_level] << grade
         roster[grade] << student
-      else
-        roster[grade]=[]
+      elsif roster.has_key?(grade)
+        roster[grade] << student
+      elsif
         roster[grade] << student
       end
   end
