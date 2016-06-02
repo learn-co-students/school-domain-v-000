@@ -2,19 +2,11 @@
 # code here!
 
 class School
-attr_accessor :name
+attr_accessor :name, :roster
 
   def initialize(name)
     @name = name
-
-  end
-  def roster=(roster)
-    @roster = roster
-
-  end
-  def roster
     @roster = {}
-
   end
 
   def add_student=(name, grade)
@@ -33,14 +25,21 @@ attr_accessor :name
     end
   end
 
-
-
   def grade(grade)
     roster[grade]
   end
 
-end
+  def sort
+
+    roster.each do |grade, names|
+      roster[grade] = names.sort
+
+    end
+
+  end
+  end
 
 school = School.new("Bayside High School")
 school.roster
+
 #school.add_student("AC Slater", 10)
