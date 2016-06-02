@@ -23,15 +23,13 @@ attr_accessor :name
   end
 
   def add_student(name, grade)
+    roster[grade] ||= []
     roster.each do |key, value|
       if key == grade
-        if value.length == 0
-            roster[grade] = []
+        roster[grade]  << name
 
-        else
-          roster[grade]  << name
-        end
       end
+
     end
   end
 
@@ -45,4 +43,4 @@ end
 
 school = School.new("Bayside High School")
 school.roster
-school.add_student("AC Slater", 10)
+#school.add_student("AC Slater", 10)
