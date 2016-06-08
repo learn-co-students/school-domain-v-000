@@ -1,3 +1,4 @@
+require "pry"
 class School
 
 #getter methods
@@ -11,21 +12,23 @@ class School
     @roster = {}
   end
 
-#add_student setter method
+#add_student method
   def add_student(student, grade)
     @student = student
     @grade = grade
-    @roster[grade] = []
-    # if grade == :suite_a && value[0] == "A" #alternative tp this is name.start_with?("A")
-    #   winner = value
-    # end
-    @roster[grade] << student
-    # 
-    # if @roster.key==grade
-    #   @roster[grade].delete
+
+    #failed code
+    # if @roster[grade] = [] || @roster.include?(grade)
     #   @roster[grade] << student
     # else
-    # @roster[grade] << student
+    #   @roster[grade] = student
     # end
+
+    if roster[grade] == nil
+      roster[grade] = [student]
+    else
+      roster[grade] << student
+    end
+
   end
 end
