@@ -16,8 +16,16 @@ class School
     @student = student
     @grade = grade
     @roster[grade] = []
+    # if grade == :suite_a && value[0] == "A" #alternative tp this is name.start_with?("A")
+    #   winner = value
+    # end
     @roster[grade] << student
+    # 
+    # if @roster.key==grade
+    #   @roster[grade].delete
+    #   @roster[grade] << student
+    # else
+    # @roster[grade] << student
+    # end
   end
-
-
 end
