@@ -1,3 +1,4 @@
+require 'pry'
 class School
 
   #getter methods
@@ -25,6 +26,8 @@ class School
   end
 
   def sort
-    @roster.sort.each { |grade, student|  student.sort } #sort the grades then sort the students
+    @roster.each do |grade, student|
+      student.sort! #sorts all the students in each array and keeps them sorted with the!
+    end
   end
 end
