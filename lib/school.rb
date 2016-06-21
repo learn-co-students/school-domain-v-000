@@ -1,4 +1,3 @@
-#school = School.new("Bayside High School")
 class School
   attr_reader :school_name, :roster
 
