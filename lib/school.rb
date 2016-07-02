@@ -9,7 +9,7 @@ class School
   end
 
   def add_student(student_name, grade)
-    roster[grade] = []
+    self.roster({grade = []})
     puts roster
   end
 end
