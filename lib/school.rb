@@ -1,1 +1,22 @@
-# code here!
+class School
+  def initialize(name)
+    @name = name
+    @roster = {}
+  end
+
+  attr_accessor :roster, :name
+
+  def add_student(name, grade)
+    @roster[grade] = [] if @roster[grade] == nil
+    @roster[grade] << name
+  end
+
+  def grade(grade)
+    @roster[grade]
+  end
+
+  def sort
+    @roster.keys.each{|grade| @roster[grade].sort!}
+    @roster
+  end
+end
