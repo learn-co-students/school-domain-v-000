@@ -1,6 +1,9 @@
 class School
+  attr_accessor :name, :roster
+
   def initialize(name)
     @roster = {}
+    @name = name
   end
   def roster
     @roster
@@ -20,7 +23,7 @@ class School
     roster.each do |key, value|
     value.sort!
    end
-   return roster
+    roster
   end
 
 
