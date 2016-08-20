@@ -1,9 +1,9 @@
+require 'pry'
 class School
+  attr_accessor :school, :roster, :student, :grade
 
-  attr_accessor :name, :roster
-
-  def initialize(name)
-    @name = name
+  def initialize(school)
+    @school = school
     @roster = {}
   end
 
@@ -18,10 +18,9 @@ class School
 
   def sort
     alphabetical = {}
-    roster.each do |grade, student|
-      alphabetical[grade] = student.sort
+    roster.each do |grade, students|
+      alphabetical[grade] = students.sort
     end
-    alphabetical
+    alphabetical.sort.to_h
   end
-
 end
