@@ -8,6 +8,7 @@ class School
   end
 
   def roster
+    @roster
   end
 
   def add_student(student_name, grade)
@@ -18,6 +19,17 @@ class School
 
   def grade(grade)
     @roster[grade]
+  end
+
+  def sort
+
+    @roster.each do |key, value|
+    value.sort!
+    end
+
+    @roster
+
+
   end
 
 end
