@@ -1,4 +1,5 @@
 require 'pry'
+
 class School
   attr_reader :name
 
@@ -13,8 +14,8 @@ class School
 
   def add_student(student, grade)
     roster[grade] ||= []
-    roster.include?(student)== false;
-    roster[grade] << student 
+    roster.include?(student)==false
+    roster[grade] << student
   end
 
   def grade(grade)
@@ -22,10 +23,10 @@ class School
   end
 
   def sort
-    reezult = []
+    result = []
     roster.each do |k,v|
-      reezult = v.sort
-      roster[k] = reezult
+      result = v.sort
+      roster[k] = result
     end
   end
 end
