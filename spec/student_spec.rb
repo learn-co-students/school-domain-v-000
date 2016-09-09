@@ -9,6 +9,9 @@ describe 'School' do
     it 'has an empty roster when initialized' do
       expect(@school.roster.length).to eq(0)
     end
+    it "has a name when initialized" do
+      expect(@school.name).to eq("Test School")
+    end
   end
 
   describe "#add_student" do
