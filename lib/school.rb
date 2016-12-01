@@ -1,5 +1,5 @@
 class School
-  attr_reader :roster
+  attr_reader :name, :roster
 
   def initialize(name)
     @name = name
@@ -16,8 +16,11 @@ class School
   end
 
   def sort
-    @roster.each do |students|
-     students[1].sort!
+    temp_roster = {}
+    @roster.each do |score, students|
+       temp_roster[score] = students.sort
     end
+  temp_roster   
   end
+  
 end
