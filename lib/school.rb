@@ -9,16 +9,22 @@ end
 
 
 def add_student(student_name, grade)
-  if @roster == {} 
-    @roster[grade] = []
-    @roster[grade] << student_name
-  else 
-    @roster[grade] << student_name
-  end
+  @roster[grade] ||= []
+  @roster[grade] << student_name
 end
 
 def grade(num)
-  @roster[num].values
+  @roster.each do |key,values|
+   if key == num
+    return values
+  end
+  end
+end
+
+def sort
+  @roster.each do |grade, name|
+    name.sort!
+  end
 end
 
 end
