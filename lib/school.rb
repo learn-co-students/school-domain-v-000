@@ -2,19 +2,28 @@ require "pry"
 
 class School
   attr_reader :school_name
-  ROSTER = {}
+  attr_accessor :roster
 
   def initialize(school_name)
     @school_name = school_name
-  end
-
-  def roster
-    ROSTER
+    @roster = {}
   end
 
   def add_student(name,grade)
-      ROSTER[grade]||=[]
-      ROSTER[grade]<<name
+    @roster[grade]||=[]
+    @roster[grade]<<name
+  end
+
+  def grade(grade)
+    @roster[grade]
+  end
+
+  def sort
+    sorted = {}
+    @roster.each do |x,y|
+      sorted[x]=y.sort
+    end
+    sorted
   end
 
 end
