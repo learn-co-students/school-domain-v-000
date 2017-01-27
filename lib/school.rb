@@ -1,11 +1,10 @@
-# code here!
 class School
 
-	attr_accessor :name, :roster
+	attr_reader :roster
 
-	def initialize(name = nil)
+	def initialize(name)
 		@name = name
-    @roster = {}
+		@roster = {}
 	end
 
 	def add_student(student, grade)
@@ -13,19 +12,18 @@ class School
 		@roster[grade] << student
 	end
 
-	def grade(num)
-		@roster.each do |grade, student_array|
-			if num == grade
-				return student_array
+	def grade(grade)
+		@roster.each do |key, value|
+			if grade == key
+				return value
 			end
 		end
 	end
 
-	def sort 
-		@roster.each do |grade, student_array|
-			@roster[grade] = student_array.sort
+	def sort
+		@roster.each do |key, value|
+			value.sort!
 		end
 	end
-
 
 end
