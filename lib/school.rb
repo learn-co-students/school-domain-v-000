@@ -7,17 +7,13 @@ class School
   end
   def add_student(name,grade)
     #binding.pry
-    roster[name] = []
-    if roster[name] = nil && roster[grade] = nil
+    roster[grade] ||= []
+    # roster[grade] OR roster[grade] = empty array []
+    #means if roster[grade] is nil, set roster[grade] = []
+    #&& if roster[grade] exists, set roster[grade] = roster [grade]
+    #roster[grade] = []
+    roster[grade] << name
     #binding.pry
-    roster[name] << grade
-    #binding.pry
-  elsif roster[name] = name && grade != nil
-    #binding.pry
-    roster[name] = []
-    roster[name] << grade
-    #roster[new_name].delete(new_grade_for_grade_array)
-    #binding.pry
-    end
+    #end
   end
 end
