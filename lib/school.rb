@@ -16,4 +16,15 @@ class School
     #binding.pry
     #end
   end
+  def grade (grade)
+    #binding.pry
+    roster[grade]
+    #binding.pry
+  end
+  def sort
+    binding.pry
+    roster.each do |key,value| value.sort! end
+    #http://stackoverflow.com/questions/3154111/how-do-i-sort-an-array-of-hashes-by-a-value-in-the-hash
+  end
+  roster
 end
