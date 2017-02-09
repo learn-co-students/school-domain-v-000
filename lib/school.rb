@@ -20,13 +20,13 @@ class School
   def grade(grade)
     @roster[grade]
   end
-end
-
-def sort
-  @roster.collect do |grade|
-    grade.sort!
+  def sort
+    @roster.collect do |grade|
+      grade.sort!
+    end
   end
 end
+
 
 
 #
