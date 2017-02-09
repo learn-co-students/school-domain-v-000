@@ -20,11 +20,14 @@ class School
   def grade(grade)
     @roster[grade]
   end
+
   def sort
-    @roster.collect do |grade|
-      grade.sort!
+    @roster.collect do |grade, students_array|
+      students_array.sort!
     end
+    @roster
   end
+  # close class
 end
 
 
