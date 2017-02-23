@@ -3,7 +3,7 @@ require "pry"
 # code here!
 
 class School
-  
+
   attr_accessor  :name, :roster
 
   def initialize(name)
@@ -24,9 +24,10 @@ class School
   end
 
   def sort
-    @roster.collect do |grade, students|
-      students.sort!
-    end
-    @roster
+    @roster.sort!
+  #   @roster.collect do |grade, students|
+  #     students.sort!
+  #   end
+  #   @roster
   end
 end
