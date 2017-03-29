@@ -8,18 +8,21 @@ class School
   end
 
   def add_student(student, grade)
-    @roster[grade] = [] unless @roster.keys.include?(grade)
-    @roster[grade] << student
+    #@roster[grade] = [] unless @roster.keys.include?(grade) #my
+    roster[grade] ||= []
+    roster[grade] << student
   end
 
   def grade(num)
-    @roster[num]
+    roster[num]
   end
 
   def sort
-    #@roster
-    @roster.each do |key, value|
-      value.sort!
+    #not editing the original hash - using another hash instead of the sort!
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
     end
+    sorted
   end
 end
