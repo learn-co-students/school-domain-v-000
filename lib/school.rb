@@ -23,9 +23,9 @@ class School
     @roster[grade]
   end
   def sort
-    sorted_by_grade = Hash[@roster.sort_by { |grade, name| grade}]
-    sorted_by_grade_and_name = sorted_by_grade.collect {|grade,name| name.sort!}
-    sorted_by_grade_and_name
+    @roster= Hash[@roster.sort_by { |grade, name| grade}]
+    @roster.collect {|grade,name| name.sort!}
+    @roster
   end
 
 end
