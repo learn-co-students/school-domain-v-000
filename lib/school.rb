@@ -18,10 +18,7 @@ class School
   end
 
   def sort
-    @sorted_roster = @roster.keys.sort
-    @sorted_roster = @sorted_roster.each do |key, value|
-      value.sort
-    end
+    Hash[@roster.sort.map {|a, b| [a, b.sort]}]
   end
-  @sorted_roster
+
 end
