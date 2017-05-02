@@ -22,4 +22,12 @@ class School
   def grade(int)
     @roster[int]
   end
+
+  def sort
+
+    @roster.each do |a, d|
+      puts @roster[a] = d.sort
+    end
+    end
+
 end
