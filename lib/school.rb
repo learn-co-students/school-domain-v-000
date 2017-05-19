@@ -9,7 +9,7 @@ class School
 
   def add_student(student_name, grade)
     @roster[grade] = [] if !@roster.include? grade
-    @roster[grade] << student_name
+    @roster[grade] << student_name # split to three lines to avoid duplication
     @roster
   end
 
@@ -18,8 +18,6 @@ class School
   end
 
   def sort
-    res = {}
-    @roster.sort.to_h.each { |key, value| res[key] = value.sort }
-    res
+    @roster.sort.collect{ |item| [item[0], item[1].sort]}.to_h
   end
 end
