@@ -22,20 +22,14 @@ class School
     end
 
     def grade(num)
-        final_array = []
-        @roster.each{ |grade, names|
-            if grade == num
-                names.each{ |name|
-                    final_array << name
-                }
-            end
-        }
-        final_array
+        @roster[num]
     end
 
     def sort
+        sorted_hash = {}
         @roster.each{ |grade, names|
-            names.sort!
+            sorted_hash[grade] = names.sort
         }
+        sorted_hash
     end
 end
