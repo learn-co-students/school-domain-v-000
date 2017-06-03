@@ -25,7 +25,7 @@ end
   end
 
   def sort
-    @sort = @roster.map do |grade|
+    @sort = @roster.each do |grade, students_array|
       @roster[grade].sort!
     end
   end
