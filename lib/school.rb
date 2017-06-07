@@ -3,16 +3,15 @@ require "pry"
 # code here!
 class School
   attr_accessor :name, :roster
+
   def initialize(name)
     @name = name
     @roster = {}
   end
 
   def add_student(student, grade)
-    unless @roster[grade].is_a?(Array)
-      @roster[grade] = []
-    end
-    @roster[grade] << student
+      @roster[grade] = [] unless @roster[grade].is_a?(Array)
+      @roster[grade] << student
   end
 
   def grade(grade_level)
@@ -20,11 +19,8 @@ class School
   end
 
   def sort
-    sorted_roster = {}
-   @roster.each do |grade,student|
-      sorted_roster[grade] = student.sort
+    @roster.inject({}) do |hash, (key, value)|
+      hash.merge key => value.sort
     end
-    sorted_roster
   end
-
 end
