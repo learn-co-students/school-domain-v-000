@@ -7,18 +7,20 @@ def initialize(name)
 end
 
 def add_student(name, grade)
-  roster[grade] ||= []
-  roster[grade] << name
+  @roster[grade] ||= []
+  @roster[grade] << name
 end
 
 def grade(grade)
-  roster[grade]
+  @roster[grade]
 end
 
 def sort
-  roster.each do |grade, name|
-    name.sort!
+  sorted = {}
+  @roster.each do |grade, name|
+    sorted[grade] = name.sort
   end
+  sorted
 end
 
 end
