@@ -15,6 +15,15 @@ class School
 	# result: @roster[grade] = [], b/c can't push an item into an array that is the value of a key that doesn't exist yet
 		@roster[grade] ||= []
 		@roster[grade] << name
+	
+=begin
+		if !@roster.include?(grade) 
+			@roster[grade] = []
+			@roster[grade] << name
+		else
+			@roster[grade] << name
+		end
+=end
 	end
 	
 	def grade(grade)
@@ -24,6 +33,11 @@ class School
 	def sort
 		@roster.collect { |k, v| v.sort!}
 		@roster
+=begin
+		sorted = {}
+		@roster.each { |k, v| sorted[k] = v.sort}
+		sorted
+=end
 	end
 
 end
