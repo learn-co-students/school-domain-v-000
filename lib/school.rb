@@ -22,7 +22,7 @@ class School
 	end
 
 	def sort
-		@roster.collect { |k, v| v.sort!}
+		@roster.each { |k, v| v.sort!}
 		@roster
 	end
 
