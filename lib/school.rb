@@ -31,10 +31,10 @@ class School
   end
 
   def sort
-    @roster.collect do |grade| 
-      @roster[grade] = @roster[grade].sort {|a, b| a <=> b}
+    @roster.collect do |grade, students| #put key(grade) and values(students) into an array and for each element do the next line (sorting)
+      @roster[grade] = @roster[grade].sort #replace roster[grade] with alphabetically sorted array 
     end
-    @roster
+    @roster #return the newly alphabetized roster
   end
 
 end
