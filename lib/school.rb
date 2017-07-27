@@ -7,27 +7,20 @@ class School
     @roster=Hash.new
   end
 
-def add_student(student, grade)
+  def add_student(student, grade)
     roster[grade] ||= []
     roster[grade] << student
-end
-
-def grade(grade)
-    roster[grade]
-end
-
-def sort
-  roster.each do |grade, students|
-    students.sort
   end
 
-  Hash[roster.sort]
+  def grade(grade)
+    roster[grade]
+  end
 
+  def sort
+    roster.each do |grade, students|
+      roster[grade]=students.sort
+    end
+    Hash[roster.sort]
+  end
 
-  #   sorted_students = {}
-  #   roster.each do |grade, students|
-  #     sorted_students[grade]=students.sort
-  #   end
-  #   sorted_students
-  # end
 end
