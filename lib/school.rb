@@ -17,11 +17,17 @@ def grade(grade)
 end
 
 def sort
-  # Hash[roster.sort]
-    sorted_students = {}
-    roster.each do |grade, students|
-      sorted_students[grade]=students.sort
-    end
-    sorted_students
+  roster.each do |grade, students|
+    students.sort
   end
+
+  Hash[roster.sort]
+
+
+  #   sorted_students = {}
+  #   roster.each do |grade, students|
+  #     sorted_students[grade]=students.sort
+  #   end
+  #   sorted_students
+  # end
 end
