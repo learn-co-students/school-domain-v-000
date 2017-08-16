@@ -23,7 +23,8 @@ class School
 
   def sort
     sorted_roster = {}
-    @roster.keys.sort.each {|grade| sorted_roster[grade] = @roster[grade].sort}
+    #@roster.keys.sort.each {|grade| sorted_roster[grade] = @roster[grade].sort}
+    @roster.keys.each  {|grade| sorted_roster[grade] = @roster[grade].sort}
     sorted_roster
   end
 
