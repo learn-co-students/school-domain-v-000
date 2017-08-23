@@ -25,18 +25,18 @@ class School
   end
 
   def sort
-  #   sorted = {}
-  #   roster.each do |grade, students|
-  #     sorted[grade] = students.sort
-  #   end
-  #   sorted
-  # end
-    sorted_grades = @roster.sort.to_h
-    sorted_grades.each do |grade, students|
-      sorted_grades[grade] = students.sort
+    sorted_students = {}
+    roster.each do |grade, students|
+      sorted_students[grade] = students.sort
     end
-    return sorted_grades
+    sorted_students
   end
+  #   sorted_grades = @roster.sort.to_h
+  #   sorted_grades.each do |grade, students|
+  #     sorted_grades[grade] = students.sort
+  #   end
+  #   return sorted_grades
+  # end
 end
 
 # school = School.new('Bountiful High')
