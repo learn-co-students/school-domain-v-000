@@ -31,19 +31,13 @@ class School
     end
     sorted_students
   end
+end
+
   #   sorted_grades = @roster.sort.to_h
   #   sorted_grades.each do |grade, students|
   #     sorted_grades[grade] = students.sort
   #   end
   #   return sorted_grades
   # end
-end
 
-# school = School.new('Bountiful High')
-# school.add_student('Annette Maza', 9)
-# school.add_student('Thom Allen', 9)
-# school.add_student('Diana Allen', 9)
-# school.add_student('Clark Allen', 7)
-
-# ap school.sort
 # binding.pry
