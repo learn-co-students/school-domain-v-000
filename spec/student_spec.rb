@@ -29,7 +29,7 @@ describe 'School' do
       @school.add_student("Jeff Baird", 10)
       @school.add_student("Avi Flombaum", 10)
       @school.add_student("Blake Johnson", 7)
-
+        #this below is the roster READER METHOD that they're calling!
       expect(@school.roster).to eq({9 => ["Homer Simpson"], 10 => ["Jeff Baird", "Avi Flombaum"], 7 => ["Blake Johnson"]})
     end
   end
