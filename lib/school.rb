@@ -1,4 +1,5 @@
 require 'pry'
+
 class School
   attr_reader :name
 
@@ -14,8 +15,8 @@ class School
   def add_student(student, grade)
 		@roster[grade] ||= []
     @roster.include?(student)== false;
-    @roster[grade] << student 
-  end
+    @roster[grade] << student
+   end
 
   def grade(grade)
     @roster[grade]
@@ -26,6 +27,6 @@ class School
     @roster.each do |k,v|
       result = v.sort
       @roster[k] = result
-    end
+		end
 	end
 end
