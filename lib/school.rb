@@ -12,20 +12,20 @@ class School
   end
 
   def add_student(student, grade)
-    roster[grade] ||= []
-    roster.include?(student)== false;
-    roster[grade] << student 
+		@roster[grade] ||= []
+    @roster.include?(student)== false;
+    @roster[grade] << student 
   end
 
   def grade(grade)
-    roster[grade]
+    @roster[grade]
   end
 
   def sort
-    reezult = []
-    roster.each do |k,v|
-      reezult = v.sort
-      roster[k] = reezult
+		result = []
+    @roster.each do |k,v|
+      result = v.sort
+      @roster[k] = result
     end
-  end
+	end
 end
