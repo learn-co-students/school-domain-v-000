@@ -1,0 +1,13 @@
+test1 = {fruit => apples}
+test2 = vegetables : broccoli
+test3 = {:amaya => mom}
+
+
+new_hash = {}
+new_hash["new_key"] = ["new_value"]
+
+def add_to_hash(info, hash)
+  hash.each { |key, value| value << info}
+end
+
+add_to_hash("next_value_to_add", new_hash)
