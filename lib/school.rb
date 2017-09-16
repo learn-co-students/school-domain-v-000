@@ -23,7 +23,6 @@ class School
     @roster.each do |grade, array|
       array.sort!
     end
-    @roster
   end
 
 
