@@ -19,11 +19,24 @@ end
   def add_student(student_name, grade)
     @student_name = student_name
     @grade = grade
-    @roster[@grade] = []
-    @roster[@grade] << @student_name
+    if !@roster.include?(@grade)
+      @roster[@grade] = []
+      @roster[@grade] << @student_name
+    else
+      @roster[@grade] << @student_name
+    end
   end
 
   def grade(grade)
-    puts "#{@roster[@grade]}"
+    @grade = grade
+    @roster[@grade]
+  end
+
+  def sort
+    sorted_roster = {}
+    @roster.collect do |grade, students|
+      sorted_roster[grade] = students.sort
+    end
+    sorted_roster
   end
 end
