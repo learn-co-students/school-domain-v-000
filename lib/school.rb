@@ -11,7 +11,7 @@ class School
   def add_student(name, grade)
     # the example roster: {9: ['john', 'bob'], 10: ['melissa', 'enoch']}
     # first, is the grade a key? how do we get that key a value if there is no value (starting value)?
-    @roster[grade] ||= []
+    @roster[grade] ||= [] # what is this again? or equals?
     @roster[grade] << name # expects a hash of grade => name
   end
 
