@@ -2,12 +2,13 @@ class School
   attr_accessor :name, :grade
   attr_reader :roster
 
-  def initialize
+  def initialize(school)
+    @school = school
     @roster = {}
   end
 
   def roster
-    puts @roster
+    @roster
   end
 
   def add_student(name, grade)
@@ -23,9 +24,9 @@ class School
 
   def grade(grade)
     @grade = grade
-    @roster.collect do |k, v|
+    @roster.map do |k, v|
       if k == @grade
-        puts v
+        return v
       end
     end
   end
