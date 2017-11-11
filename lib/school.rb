@@ -21,8 +21,8 @@ class School
   # the add_student method is taking key value pairs 
   # student grade - key
   # student name - value
-
-
+    [student_grade, student_name]
+   
   end  
   
 end 
