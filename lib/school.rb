@@ -1,6 +1,8 @@
 # code here!
 require 'pry'
 
+ROSTER = []
+
 # create School class 
 class School 
 # initialize method for roster
@@ -16,15 +18,16 @@ class School
     @roster = school_roster
   end
   
-  def roster
-    @roster = {}
+  def roster(student_name, student_grade)
+    ROSTER << student_name
+    ROSTER << student_grade
   end
   
   def add_student(student_name, student_grade)
   # the add_student method is taking key value pairs 
   # student name - key 
   # student grade - value 
-    @roster[:student_name] = student_grade
+   student_name: student_grade
   end  
   
 end 
