@@ -16,8 +16,10 @@ class School
     @roster = {}
   end
   
-  def add_student(name, grade)
-  
+  def add_student
+  # the add_student method is taking key value pairs 
+  # student name - key 
+  # student grade - value 
   end  
   
 end 
