@@ -21,8 +21,10 @@ class School
   # the add_student method is taking key value pairs 
   # student grade - key
   # student name - value
-    @roster[student_grade] = [student_name]
-   
+      student_name.length
+      @roster[student_grade] = [student_name]
+      binding.pry
+    end
   end  
   
 end 
