@@ -29,7 +29,7 @@ class School
   end  
   
   def grade 
-  
+  # the grade method should return an array with multiple names of students sorted by grade
   end
   
 end 
