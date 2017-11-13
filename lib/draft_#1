@@ -1,0 +1,35 @@
+
+class School
+
+  attr_accessor :grade, :student
+  attr_reader :school_name
+
+  ROSTER = {}
+
+  def initialize(school_name)
+    @name = school_name
+    @grade = grade
+    @student = student
+  end
+
+  def add_student(student, grade)
+    ROSTER["#{grade}"] = []
+    ROSTER["#{grade}"]  << "#{student}"
+  end
+
+  def print_roster
+    #ROSTER.each do |grade, student|
+      puts ROSTER
+    #end
+  end
+end
+
+dec = School.new("Decatur")
+
+dec.add_student("laura", "10")
+dec.add_student("ryan", "11")
+dec.add_student("coda", "9")
+dec.add_student("lani", "9")
+
+
+#create new empty array  grade input into the hash and make it's value = to the array into which we schoop the students
