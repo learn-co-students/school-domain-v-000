@@ -28,9 +28,9 @@ class School
      @roster[student_grade] << student_name
   end  
   
-  def grade
+  def grade(student_name, student_grade)
   # the grade method should return an array with multiple names of students sorted by grade
-    roster
+    @roster[student_grade]
     # access key and should output values (student_name)
  
     
