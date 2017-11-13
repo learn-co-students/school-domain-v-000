@@ -25,12 +25,12 @@ class School
     if !@roster[student_grade]
       @roster[student_grade] = []
     end
-     @roster[student_grade] << student_name
+    @updated_roster = @roster[student_grade] << student_name
   end  
   
-  def grade(student_name, student_grade)
+  def grade
   # the grade method should return an array with multiple names of students sorted by grade
-    @roster[student_grade]
+    @updated_roster
     # access key and should output values (student_name)
  
     
