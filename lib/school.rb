@@ -17,10 +17,11 @@ class School
   # the add_student method is taking key value pairs 
   # student grade - key
   # student name - value
-      student_name.length
-      @roster[student_grade] = [student_name]
-      binding.pry
+  # [student_name].map do |name|
+    if !@roster[student_grade]
+      @roster[student_grade] = []
     end
+     @roster[student_grade] << student_name
   end  
   
 end 
