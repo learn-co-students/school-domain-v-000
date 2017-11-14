@@ -35,8 +35,8 @@ class School
   # access key and should output values (student_name)
     end
   
-  def sort 
-    @roster.sort
+  def sort
+  @roster.keys.sort
   end 
   
 end 
