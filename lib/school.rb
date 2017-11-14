@@ -27,11 +27,7 @@ class School
     end
 
   def grade(grade)
-     @roster.collect do |k,v|
-       if grade == k
-          return v
-       end
-     end
+     @roster[grade]
   end
 
   def sort
