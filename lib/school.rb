@@ -31,12 +31,16 @@ class School
   def grade(student_grade)
   # the grade method should return an array with multiple names of students sorted by grade
     @roster[student_grade]
-      
+  
   # access key and should output values (student_name)
     end
   
   def sort
-  @roster.sort.to_h
+      @roster.each do |student_grade, names|
+      @roster[student_grade] = names.sort
+      
+      end
+    # student_grade "7"
   end 
   
 end 
