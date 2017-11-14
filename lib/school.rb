@@ -32,15 +32,12 @@ class School
   # the grade method should return an array with multiple names of students sorted by grade
     @roster[student_grade]
       
+  # access key and should output values (student_name)
     end
- 
-    # access key and should output values (student_name)
- 
+  
+  def sort 
     
-
+  end 
   
 end 
-# 
-
-
-# {10 => ["AC Slater"]}
+ 
