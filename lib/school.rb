@@ -33,7 +33,7 @@ attr_reader :roster
         new_roster[key] = []
         new_roster[key] = values.sort
     end
-    new_roster
+    @roster = new_roster
   end
 
 end
