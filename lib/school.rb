@@ -13,7 +13,7 @@ class School
     if !@roster.keys.include?(student_grade)
       @roster[student_grade] = []
     end
-      @roster[student_grade] << student_name
+    @roster[student_grade] << student_name
   end
 
   def grade(grade)
@@ -21,7 +21,8 @@ class School
   end
 
   def sort
-    @roster[grade].sort { | name1, name2 | name1 <=> name2 }
-    @roster
+    @roster.map do | grade, names |
+      @roster[grade] = names.sort
+    end
   end
 end
