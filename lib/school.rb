@@ -22,4 +22,5 @@ class School
   	end
   	sorted
   end
+  binding.pry
 end
