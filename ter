@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ubuntu/workspace/oo-ruby/start-self/school-domain-v-000/lib/school.rb @ line 19 School#add_student:
+
+    [1;34m14[0m: [32mdef[0m [1;34madd_student[0m(student, grade)
+    [1;34m15[0m:   [32mif[0m roster.keys.include?(grade)
+    [1;34m16[0m:       binding.pry
+    [1;34m17[0m:       roster[grade].values << student
+    [1;34m18[0m:   [32melse[0m
+ => [1;34m19[0m:       binding.pry
+    [1;34m20[0m:       roster[grade] = []
+    [1;34m21[0m:       roster[grade] << student
+    [1;34m22[0m: 
+    [1;34m23[0m:   [32mend[0m
+    [1;34m24[0m: [32mend[0m
+
