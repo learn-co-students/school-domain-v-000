@@ -1,22 +1,18 @@
 class School
-  attr_reader :school
+  attr_reader :school, :roster
   def initialize(school)
     @school = school
-  end
-
-  def roster
     @roster = Hash.new
   end
 
   def add_student(name, grade)
     @name = name
     @grade = grade
-    if @roster[grade] != nil
-      @roster[grade] << name
-    else
+    if @roster[grade] == nil
       @roster[grade] = []
-      @roster[grade] << name
     end
+    @roster[grade] << name
+
   end
 
   def grade(grade)
