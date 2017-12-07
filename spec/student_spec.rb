@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe 'School' do
   before :each do
@@ -13,6 +14,7 @@ describe 'School' do
 
   describe "#add_student" do
     it 'is able to add a student' do
+      binding.pry
       @school.add_student("AC Slater", 10)
       expect(@school.roster).to eq({10 => ["AC Slater"]})
     end
