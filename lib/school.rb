@@ -8,15 +8,15 @@ class School
     end
 
     def add_student(name, grade)
-        !roster.include?(grade) ? @roster[grade] = [] : false
-        @roster[grade] << name
+        !roster.include?(grade) ? roster[grade] = [] : false
+        roster[grade] << name
     end
 
     def grade(grade)
-        return @roster[grade]
+        return roster[grade]
     end
 
     def sort
-        @roster.each {|grade, name| name.sort!}
+        roster.each {|grade, name| name.sort!}
     end
 end
