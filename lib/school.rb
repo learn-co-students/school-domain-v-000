@@ -7,24 +7,25 @@ class School
   end
 
   def add_student(student_name, grade)
-    if @roster[grade] == nil
-      @roster[grade] = []
-      @roster[grade] << student_name
+    if roster[grade] == nil
+      roster[grade] = []
+      roster[grade] << student_name
     else
-      @roster[grade] << student_name
+      roster[grade] << student_name
     end
-    @roster
+    roster
   end
 
   def grade(grade)
-    @roster[grade]
+    roster[grade]
   end
 
   def sort
-    @roster.each do |key, value|
-      value.sort!
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
     end
-    @roster
+    sorted
   end
 
 end
