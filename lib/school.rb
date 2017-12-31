@@ -8,9 +8,20 @@ attr_accessor :name, :roster, :grade
   end
 
   def add_student(student_name, grade)
-    roster[new_student] = []
-    roster[new_student] << student_name
-    roster[new_student] << grade
+    if @roster.keys.include?(grade)
+      @roster[grade] << student_name
+    else
+      @roster[grade] = []
+      @roster[grade] << student_name
+    end
+  end
+
+  def grade(num)
+    
+  end
+
+  def sort
+
   end
 
 end
