@@ -26,9 +26,7 @@ attr_accessor :School_name, :roster, :grade
 
 
   def sort
-    @roster.map do |key, value|
-      value.sort
-    end
+    @roster.each_value(&:sort!)
   end
 
 end
