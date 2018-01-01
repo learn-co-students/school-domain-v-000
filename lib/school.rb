@@ -17,15 +17,18 @@ attr_accessor :School_name, :roster, :grade
   end
 
   def grade(num)
-    @roster.keys.collect do |key|
+    @roster.map do |key, value|
       if key == num
-        return key()
+        return value
       end
     end
   end
 
-  def sort
 
+  def sort
+    @roster.map do |key, value|
+      value.sort
+    end
   end
 
 end
