@@ -19,7 +19,7 @@ attr_accessor :School_name, :roster, :grade
   def grade(num)
     @roster.keys.collect do |key|
       if key == num
-        return key
+        return key()
       end
     end
   end
