@@ -1,9 +1,9 @@
 # code here!
 class School
-attr_accessor :name, :roster, :grade
+attr_accessor :School_name, :roster, :grade
 
-  def initialize(name)
-    @name = name
+  def initialize(school_name)
+    @school_name = school_name
     @roster = {}
   end
 
@@ -17,7 +17,11 @@ attr_accessor :name, :roster, :grade
   end
 
   def grade(num)
-    
+    @roster.keys.collect do |key|
+      if key == num
+        return key
+      end
+    end
   end
 
   def sort
