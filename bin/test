@@ -1,1 +1,2 @@
-require_relative "../lib/keys.rb"
+require_relative "../lib/test.rb"
+roster = {7 => ["Blake Johnson", "Jack Bauer"], 9 => ["Bart Simpson", "Homer Simpson"], 10 => ["Avi Flombaum", "Jeff Baird"]}
