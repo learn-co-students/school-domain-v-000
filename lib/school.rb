@@ -17,12 +17,10 @@ class School
   end
 
   def sort
+    sorter = {}
     self.roster.each do |grade, names|
-      names = names.sort do |a, b|
-        a <=> b
-      end
-      self.roster[grade] = names
-      self.roster
+      sorted[grade] = names.sort
     end
+    sorted
   end
 end
