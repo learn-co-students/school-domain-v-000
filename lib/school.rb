@@ -9,13 +9,14 @@ attr_reader :name
   end
 
   def add_student(student_name, grade)
-
-    if !@roster.has_key?(grade)
-      @roster[grade] = []
-      @roster[grade] << student_name
-    elsif
-      @roster[grade] << student_name
-    end
+    @roster[grade]||=[]
+    @roster[grade]<<student_name
+    # if !@roster.has_key?(grade)
+    #   @roster[grade] = []
+    #   @roster[grade] << student_name
+    # elsif
+    #   @roster[grade] << student_name
+    # end
   end
 
   def grade(grade)
@@ -23,7 +24,6 @@ attr_reader :name
   end
 
   def sort
-    sorted_roster = {}
     @roster.each do |grade, student_names|
 	     @roster[grade] = student_names.sort
      end
