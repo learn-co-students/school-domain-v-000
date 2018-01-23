@@ -1,4 +1,3 @@
-require 'pry'
 class School
 attr_accessor :roster
 attr_reader :name
@@ -9,14 +8,8 @@ attr_reader :name
   end
 
   def add_student(student_name, grade)
-    @roster[grade]||=[]
-    @roster[grade]<<student_name
-    # if !@roster.has_key?(grade)
-    #   @roster[grade] = []
-    #   @roster[grade] << student_name
-    # elsif
-    #   @roster[grade] << student_name
-    # end
+    @roster[grade]||= []
+    @roster[grade] << student_name
   end
 
   def grade(grade)
@@ -26,6 +19,6 @@ attr_reader :name
   def sort
     @roster.each do |grade, student_names|
 	     @roster[grade] = student_names.sort
-     end
-   end
+    end
+  end
 end
