@@ -23,9 +23,9 @@ attr_reader :name
   end
 
   def sort
-    @roster.map do |grade, student_names|
+    sorted_roster = {}
+    @roster.each do |grade, student_names|
 	     @roster[grade] = student_names.sort
      end
-     @roster
    end
 end
