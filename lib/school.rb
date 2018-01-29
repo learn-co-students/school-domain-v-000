@@ -22,12 +22,8 @@ class School
 	end
 
 	def sort
-		array =	roster.collect{|k, v| v.sort}	
-		index = 0
 		roster.each do |k,v|
-			roster[k] = array[index]
-			v.flatten
-			index +=1
+			v.sort!
  		end
 	end
 end
