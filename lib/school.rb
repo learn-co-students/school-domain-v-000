@@ -1,5 +1,5 @@
 class School
-  attr_reader :name
+  attr_reader :name, :roster
 
   def initialize(name)
     @name = name
@@ -10,10 +10,10 @@ class School
   # def roster=(roster)
   #   @roster = roster
   # end
-
-  def roster
-    @roster
-  end
+  #
+  # def roster
+  #   @roster
+  # end
 
   def add_student(name, grade)
     if @roster[grade] == nil
