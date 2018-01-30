@@ -1,34 +1,28 @@
 class School
-  ROSTER = {}
   
-  def initialize(school)
-    @school = school
-  end
-  
-  def roster=(roster)
-    @roster = roster
+  def initialize(name)
+    @name = name
+    @roster = {}
   end
   
   def roster
-    ROSTER
+    @roster
   end
   
   def add_student(student_name,grade)
-    @student_name = student_name
-    @grade = grade
-    if ROSTER[@grade].kind_of?(Array)
-      ROSTER[@grade] << @student_name
+    if @roster.has_key?(grade)
+      @roster[grade] << student_name
     else 
-      ROSTER[@grade] = []
-      ROSTER[@grade] << @student_name
+      @roster[grade] = []
+      @roster[grade] << student_name
     end
   end
   
   def grade(grade)
-    ROSTER[grade]
+    @roster[grade]
   end
   
   def sort
-    ROSTER.sort_by {|_key, value| value}.to_h
+    @roster.each{|key, value| value.sort!}
   end
 end
