@@ -19,8 +19,7 @@ class School
 
   def sort
       sort = {}
-    roster.each do |k, v| v.sort
-      sort
+    roster.each do |k, v| sort[k] = v.sort
   end
 end
 end
