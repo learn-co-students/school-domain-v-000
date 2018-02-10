@@ -1,28 +1,34 @@
-# code here!
 class School
+  attr_accessor :roster
+  attr_reader :name
 
-  attr_reader :name, :roster
-
-  def initialize(school_name)
-    @name = school_name
+  def initialize(name)
+    @name = name
     @roster = {}
   end
 
-  def add_student(name, grade)
-    @roster[grade] ||= []
-    @roster[grade] << name
+  # add_student("AC Slater", 10)
+  # {10=>["AC Slater"]}
+  #add_studnet("STUDENT", 10)
+  def add_student(student, grade)
+    # a || a = b
+    # a is only set to b if logically false on left side (nil / false)
+    # if left side(a) is true, no need to check right side
+    roster[grade] ||= []
+    roster[grade] << student
   end
 
+  # should return an array of all students in the passed in grade argument
   def grade(grade)
-    @roster[grade]
+    roster[grade]
   end
 
   def sort
-    @roster.collect do |key, value|
-      @roster[key].sort!
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
     end
-
-    @roster
+    sorted
   end
 
 end
