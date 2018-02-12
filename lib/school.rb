@@ -1,23 +1,21 @@
 class School
 
+  attr_accessor :roster
+  attr_reader :name
+
   def initialize(name)
     @name = name
-    @roster= {}
+    @roster = {}
   end
 
-  def roster
-    @roster
-  end
-
-  def add_student (name, grade)
-    #if the grade is already stored as a key, add the name value to that grade key.
-    #otherwise make a new key value pair.
-    if @roster.has_key?(grade)
-        @roster[grade] << name
-    else
-      @roster[grade] = []
-      @roster[grade] << name
-    end
+  def add_student(student, grade)
+    roster[grade] ||= []
+    roster[grade] << student
+  #   if roster.has_key?(grade)
+  #     roster[grade] << student
+  #   else
+  #     roster[grade] = [student]
+  #   end
   end
 
   def grade(grade)
@@ -25,8 +23,7 @@ class School
   end
 
   def sort
-    self.roster.each do |grade, students|
-      students.sort!
-    end
+    roster.each {|grade, students|students.sort!}
   end
+
 end
