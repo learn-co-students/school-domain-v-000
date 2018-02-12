@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe 'School' do
+puts describe 'School' do
   before :each do
     @school = School.new("Test School")
   end
 
-  describe "::new" do
+  puts describe "::new" do
     it 'has an empty roster when initialized' do
       expect(@school.roster.length).to eq(0)
     end
   end
 
-  describe "#add_student" do
+  puts describe "#add_student" do
     it 'is able to add a student' do
       @school.add_student("AC Slater", 10)
       expect(@school.roster).to eq({10 => ["AC Slater"]})
@@ -34,7 +34,7 @@ describe 'School' do
     end
   end
 
-  describe '#grade' do
+  puts describe '#grade' do
     it 'is able to retreive students from a grade' do
       @school.add_student("Homer Simpson", 9)
       @school.add_student("Avi Flombaum", 10)
@@ -45,7 +45,7 @@ describe 'School' do
     end
   end
 
-  describe "#sort" do
+  puts describe "#sort" do
     it 'is able to sort the students' do
       @school.add_student("Homer Simpson", 9)
       @school.add_student("Bart Simpson", 9)
