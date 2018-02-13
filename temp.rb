@@ -19,13 +19,15 @@ class School
   def add_team(hash)
     hash.each do |k,v|
     add_student(k, v) 
-  end     
+		end  
+	end
 
 end
 
-my_team = {[5, "John Welch"], [3, "Bill Burr"], [8, "Sam Kinison"]}
+# my_team = {[5, "John Welch"], [3, "Bill Burr"], [8, "Sam Kinison"]}
+my_team = [[5, "John Welch"], [3, "Bill Burr"], [8, "Sam Kinison"]]
 
 flatiron = School.new("Flatiron School")
 
 flatiron.add_team(my_team)
-
+puts flatiron.roster

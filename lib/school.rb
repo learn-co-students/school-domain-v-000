@@ -5,7 +5,7 @@ class School
 
   def initialize(name)
     @name = name
-    @roster = {}
+		@roster = {}
   end
 
   def roster
@@ -14,8 +14,9 @@ class School
 
   def add_student(student, grade)
 		@roster[grade] ||= []
-    @roster.include?(student)== false;
-    @roster[grade] << student
+    if @roster.include?(student)== false
+			@roster[grade] << student
+		end
    end
 
   def grade(grade)
