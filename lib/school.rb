@@ -11,6 +11,7 @@ class School
 
   def add_student(name, grade)
     roster[grade] ||= []
+    # If what's on the LEFT is false or Nil, assign it to whats on RIGHT
     roster[grade] << name
   end
 
