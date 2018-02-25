@@ -24,6 +24,7 @@ class School
       @roster.sort_by(&:first).map { |grade, stud_name| [grade, stud_name.sort]}.to_h
 
       # hash.sort_by(&:first).map { |k, v| [k, v.sort]}.to_h
+      # found at : https://stackoverflow.com/questions/28475846/hash-of-arrays-how-to-sort-both-keys-and-elements-of-arrays
   end
 
 
