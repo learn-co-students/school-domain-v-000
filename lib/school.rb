@@ -26,12 +26,8 @@ class School
 
   def sort
    ROSTER.each do |grade, names|
-     names.each do |name|
-       if name[0][0] > name[1][0]
-         name[0] <=> name[1]
-       end
-     end
+     ROSTER[grade] = names.sort
    end
-   sorted_roster = Hash[ROSTER.sort_by {|k, v| k}]
  end
+
 end
