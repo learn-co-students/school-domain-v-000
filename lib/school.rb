@@ -26,7 +26,7 @@ class School
   end
 
   def sort  #should return hash, key of grade and value of students within.
-    roster.each {|grade, student| roster[grade] = student.sort}
-  end
+    roster.each {|grade, students| roster[grade] = students.sort}    #why does this line not work as collect and does work as each, without previous made array and shoveling???
+  end #perhaps it re arranges the array...returning the original, as is the way of .each, but in a structured order thereafter?
 
 end
