@@ -26,7 +26,7 @@ def add_student(student, grade)
   def sort
     sorted_roster = {}
 
-    roster.each do |grade, students|
+    roster.sort.each do |grade, students|
       sorted_roster[grade] = students.sort
     end
     sorted_roster
