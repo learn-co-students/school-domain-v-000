@@ -7,9 +7,7 @@ class School
   end
 
   def add_student (name, grade)
-    if !@roster.has_key? grade
-      @roster[grade]=[]
-    end
+    @roster[grade] ||= []
     # It would make sense to sort entries on insert since sorted roster would
     # be a common requirement. But test requires names not be sorted at this time!
     @roster[grade] << name
