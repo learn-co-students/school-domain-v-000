@@ -1,26 +1,34 @@
+require 'pry'
+
 class School
+  attr_reader :name, :roster
 
-  attr_accessor :name, :roster
-
-  def initialize(roster)
+  def initialize(name)
     @name = name
     @roster = {}
   end
 
-  def add_student(student_name, grade)
-    roster[grade] ||= []
-    roster[grade] << student_name
+  def add_student(name, grade)
+
+  if @roster[grade]
+  @roster[grade] << name
+else
+  @roster[grade] = []
+  add_student(name, grade)
+  end
+end
+
+def grade(grade)
+  return @roster[grade]
+end
+
+def sort
+
+  sorted_array = {}
+  roster.each do |key, value|
+    sorted_array[key] = value.flatten.sort
   end
 
-  def grade(grade)
-    roster[grade]
-  end
-
-  def sort
-    sorted = {}
-    roster.each do |grade, students|
-      sorted[grade] = students.sort
-    end
-    sorted
+  sorted_array
 end
 end
