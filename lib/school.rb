@@ -7,11 +7,7 @@ class School
   end
 
   def add_student(name, grade)
-    if @roster[grade] == nil
-      @roster[grade] = [name]
-    else
-      @roster[grade] << name
-    end
+    @roster[grade] == nil ? @roster[grade] = [name] : @roster[grade] << name
   end
 
   def grade(grade)
@@ -19,8 +15,6 @@ class School
   end
 
   def sort
-    @roster.each do |grade, students|
-      students.sort!
-    end
+    @roster.each { |grade, students| students.sort! }
   end
 end
