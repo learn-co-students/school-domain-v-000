@@ -20,7 +20,7 @@ end
 def sort
   updated_hash = {}
   @roster.each do |grade,names|
-    updated_hash[grade]= names.sort
+  updated_hash[grade]= names.sort
   end
   updated_hash
 end
