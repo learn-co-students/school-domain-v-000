@@ -6,20 +6,23 @@ def initialize(school_name)
     @roster = {}
 end
 
-#:grade => ["student"]
 def add_student(name, grade)
   @name = name
   @grade = grade
 
-  roster[grade] = []
-  roster[grade] << name
-
-
+if @roster.include?(grade) == false
+    @roster[grade] = []
+  end
+@roster[grade] << name
 end
-# def grade(kids_grade)
-#   @grade = grade
-# kids_grade.collect do |grade|
-#   end
-# end
 
-end
+def grade(kids_grade)
+  @roster[kids_grade]
+ end
+
+def sort
+  @roster.each do |grade, name|
+    @roster[grade] = name.sort
+    end
+  end
+end 
