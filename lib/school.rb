@@ -1,21 +1,19 @@
 class School
 
-  def initialize(school)
-      @school = school
+  attr_accessor :name, :roster
+
+    def initialize(name)
+      @name = name
       @roster = {}
     end
 
-    def roster
-      @roster
-    end
-
-    def add_student (name, grade)
+    def add_student (student_name, grade)
       @roster[grade] = [] if !@roster.has_key?(grade)
-      @roster[grade] << name
+      @roster[grade] << student_name
     end
 
-    def grade (grade)
-      @roster.values_at(grade).flatten
+    def grade (student_grade)
+      @roster[student_grade]
     end
 
     def sort
