@@ -1,3 +1,4 @@
+require 'pry'
 class School 
   attr_accessor :name
   attr_reader :roster
@@ -18,5 +19,10 @@ class School
     @roster[grade]
   end
   def sort 
-    @roster.sort.map do |key,value|
+    sorted = {}
+    @roster.each do |key, value|
+      sorted[key] = value.sort
+    end
+    sorted
+  end
 end
