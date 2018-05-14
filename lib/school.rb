@@ -22,6 +22,11 @@ class School
   end
 
   def sort
-    @roster.sort.to_h
+    sorted_roster = {}
+    @roster.each do |grade, student_array|
+      sorted_roster[grade] = student_array.sort
+    end
+    sorted_roster
   end
+
 end
