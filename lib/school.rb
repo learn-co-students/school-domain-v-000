@@ -16,9 +16,11 @@ attr_accessor :roster
   end
 
   def sort
-    roster.each do |grades|
-      grades.sort
-    roster
+    sorted = {}
+    roster.each do |grade, students|
+      sorted[grade] = students.sort
+    end
+    sorted
   end
 
 end
