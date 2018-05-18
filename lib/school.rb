@@ -1,1 +1,28 @@
-# code here!
+require 'pry'
+
+class School
+  attr_accessor :name, :student, :grade
+  attr_reader :roster
+
+  def initialize(name)
+    @name = name
+    @roster = Hash.new
+  end
+
+  def add_student(student, grade)
+    unless @roster.has_key?(grade)
+      @roster[grade] = Array.new
+    end
+    @roster[grade] << student
+  end
+
+  def grade(grade)
+    @roster[grade]
+  end
+
+  def sort
+    @roster.sort.to_h.each_value do |arr_value|
+      arr_value = arr_value.sort
+    end
+  end
+end
