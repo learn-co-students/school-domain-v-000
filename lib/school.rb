@@ -23,6 +23,8 @@ class School
   def sort
     @roster = @roster.sort.to_h.each_value do |arr_value|
       arr_value.replace(arr_value.sort)
+      # i used #replace because for some reason it wasn't returning
+      # the sorted value to the array of values within the roster hash
     end
   end
 end
