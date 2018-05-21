@@ -21,8 +21,8 @@ class School
   end
 
   def sort
-    @roster.sort.to_h.each_value do |arr_value|
-      arr_value = arr_value.sort
+    @roster = @roster.sort.to_h.each_value do |arr_value|
+      arr_value.replace(arr_value.sort)
     end
   end
 end
