@@ -24,6 +24,6 @@ class School
     @roster.each do |k, v|
       v = v.sort
     end
-    @roster.sort
+    @roster
   end
 end
