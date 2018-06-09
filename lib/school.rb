@@ -1,6 +1,5 @@
 class School
   
-  # attr_accessor :
   attr_reader :name, :roster
   
   def initialize(name)
@@ -9,18 +8,18 @@ class School
   end
   
   def add_student(name, grade)
-    @roster[grade] ||= []
-    @roster[grade] << name
+    roster[grade] ||= []
+    roster[grade] << name
   end
   
   def grade(grade)
-    @roster[grade]
+    roster[grade]
   end
   
   def sort
-    @roster.map do |grades, students|
-      @roster[grades].sort!
+    roster.map do |grade, name|
+      roster[grade].sort!
     end
-    @roster
+    roster
   end
 end
