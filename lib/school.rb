@@ -10,7 +10,6 @@ attr_accessor :name, :roster
 
 def add_student (name, grade)
   # binding.pry
-
   if @roster[grade] == nil
     @roster[grade] = []
   end
