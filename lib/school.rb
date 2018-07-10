@@ -10,7 +10,7 @@ require 'pry'
 
   def add_student(name,grade)
 
-    @roster[grade] ||=  []
+    @roster[grade] ||= []
 
     @roster[grade] << name
 
@@ -24,6 +24,6 @@ end
   def sort
 
     @roster.each { |key,value| @roster[key]=value.sort }
-    @roster
+    
   end
 end
