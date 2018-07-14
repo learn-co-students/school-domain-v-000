@@ -6,11 +6,12 @@ class School
     @roster={}
   end
   
+
   def add_student (students, grade)
     # grade = 10
     # @roster = {}
     # @roster[grade] = { 10: nil }
-    @roster[grade] ||= [] # { 10: [] }
+   # @roster[grade] ||= [] # { 10: [] }
     @roster[grade] << students
   end
   
@@ -23,6 +24,6 @@ class School
     @roster.each do |grade, students|
       new_hash[grade] = students.sort
     end
-      new_hash
+    new_hash
   end
 end
