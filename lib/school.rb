@@ -11,7 +11,7 @@ class School
     # grade = 10
     # @roster = {}
     # @roster[grade] = { 10: nil }
-   # @roster[grade] ||= [] # { 10: [] }
+    @roster[grade] ||= [] # { 10: [] }
     @roster[grade] << students
   end
   
