@@ -31,11 +31,11 @@ class School
   end
   
   def sort
-    empty_hash = {}
-    sorted_roster = roster.collect do |key, value|
-      empty_hash[key] = value.sort
+    sorted_hash = {}
+    roster.each do |grade, students|
+      sorted_hash[grade] = students.sort
       #binding.pry
     end
-    empty_hash
+    sorted_hash
   end
 end
