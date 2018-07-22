@@ -14,13 +14,15 @@ class School
   end
 
   def grade(grade)
-    roster.values
+    roster.values_at(grade).flatten
   end
 
   def sort
-    roster.collect do |grade, student|
-      student.sort
+    sorted = {}
+    roster.each do |grade, student|
+      sorted[grade] = student.sort
     end
+    sorted
   end
 
 end
