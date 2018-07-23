@@ -1,15 +1,17 @@
 # code here!
-class School
+class School 
   
- attr_accessor :name
+attr_accessor :school, :roster
   
-  def initialize(name, roster)
-    @name = name
-    @roster = Array.new
+  def initialize(school)
+    @school = school
+    roster = Array.new
+    @roster = roster
   end
-
-  def roster
-    @roster
-  end
+  
+  def add_student(student, grade)
+    student = {}
+    student << {"student" => "grade"}
+end
 
 end
