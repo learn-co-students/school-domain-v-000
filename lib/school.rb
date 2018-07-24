@@ -31,3 +31,5 @@ def sort
     sorted
   end
 end
+
+#This lab needs more pictures, I think in order to help facilitate understanding.
