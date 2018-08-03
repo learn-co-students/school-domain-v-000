@@ -18,6 +18,14 @@ else
   end
 
   def grade(grade)
-end
+    @roster[grade]
+  end
 
+  def sort
+    #sorted = {} #make an empty hash
+    @roster.each do |grade, name| #iterate over the roster hash
+      name.sort!#construct the sorted hash here
+    end
+    #sorted #return sorted
+  end
 end
