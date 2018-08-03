@@ -9,11 +9,15 @@ def initialize(name)
 end
 
 def add_student(name, grade)
-  if @roster[grade]
-  @roster[grade] << name
+  if @roster[grade] #if the roster has a key of that grade this line will return that key's value
+
+  @roster[grade] << name #the key exists and we add/shovel the value of name
+
 else
-  @roster[grade] = [name]
-  #@roster[grade] << name
+  # the key does not exist, so we add the key value pair
+  @roster[grade] = [name]# automatically populates the array with name argument and adds the key
+  # @roster[grade] = [] # setting key equal to an empty array
+  #@roster[grade] << name # b/c key is equal to an empty array, must add name later
     end
   end
 
@@ -22,10 +26,11 @@ else
   end
 
   def sort
-    #sorted = {} #make an empty hash
-    @roster.each do |grade, name| #iterate over the roster hash
-      name.sort!#construct the sorted hash here
-    end
-    #sorted #return sorted
+    sorted = {}
+    @roster.each do |grade, name_array|
+      sorted[grade] = name_array.sort
   end
+  sorted
+  end
+
 end
