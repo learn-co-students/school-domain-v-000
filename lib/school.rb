@@ -1,14 +1,17 @@
-# code here!
+
+
+
 class School
 
 attr_reader :name
 
 def initialize(name)
     @name = name
+    @roster = {}
 end
 
 def roster
-  roster = {}
+  @roster
 end
 
 def add_student(name, grade)
@@ -18,15 +21,19 @@ def add_student(name, grade)
 
 end
 
-
+def grade(grade)
+  roster[grade]
+end
 
 def sort
-  new_hash = {}
+  new_roster = {}
   roster.each do |grade, students|
-    new_hash[grade] = values.sort
+    new_roster[grade]= students.sort
   end
-  new_hash
+  new_roster
 end
+
+
 
 
 end
