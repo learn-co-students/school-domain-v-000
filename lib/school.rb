@@ -18,8 +18,8 @@ class School
 
   def sort
    @roster.each do |grade, students|
-     @roster[grade] = students.sort {|a, b| a[0]<=>b[0]}
+     @roster[grade] = students.sort
    end
   end
-binding.pry
+
 end
