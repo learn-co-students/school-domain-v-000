@@ -7,7 +7,7 @@ class School
     @roster = { }
   end
   def add_student(name, grade)
-    roster[grade] = [ ] unless roster[grade] != nil
+    roster[grade] ||= []
     roster[grade].push(name)
   end
   def grade(grade)
