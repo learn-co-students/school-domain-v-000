@@ -1,4 +1,4 @@
-# code here!
+require "pry"
 class School
   attr_accessor :name, :roster
   def initialize(name)
@@ -16,14 +16,12 @@ class School
   end
   
   def sort
-    new_hash = roster.sort_by{|grade, student|student}
-    new_hash.sort.to_h
+    new_hash ={}
+    roster.each do |grade, student|
+    new_hash[grade] = student.sort
+    end
+  new_hash
   end
 end
 
-school = School.new("Bayside High School")
-new_hash = {}
-    roster.each do|grade, student|
-      new_hash[grade]= student.sort
-    end
-    new_hash
+
