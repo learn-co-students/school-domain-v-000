@@ -15,7 +15,7 @@ class School
     #@roster[grade] << name
  
 if grade == @roster.detect {|n, g| g == grade}
-  binding.pry
+binding.pry
       @roster[grade] << name
     else
       @roster[grade] = []
