@@ -20,8 +20,10 @@ class School
     roster.each do |grade, student|
     new_hash[grade] = student.sort
     end
-  new_hash
+    new_hash
   end
 end
 
+
+school = School.new("Bayside High School")
 
