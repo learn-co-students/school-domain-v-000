@@ -2,6 +2,7 @@
 class School 
   attr_accessor :name, :grade, :roster 
 
+  GRADES = []
   
   def initialize(roster)
     @roster = Hash.new 
@@ -13,11 +14,12 @@ class School
     #@roster[grade] << name 
  
 
-    if grade == @roster.detect {|n, g| g == grade}
+    if grade == GRADES.detect {|g| g == grade}
         @roster[grade] << name
     else
       @roster[grade] = []
       @roster[grade] << name
+      GRADES << grade
     end
 
     
