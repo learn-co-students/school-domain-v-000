@@ -1,8 +1,9 @@
+require 'pry'
 # code here!
 class School 
   attr_accessor :name, :grade, :roster 
 
-  GRADES = []
+  #GRADES = []
   
   def initialize(roster)
     @roster = Hash.new 
@@ -14,7 +15,8 @@ class School
     #@roster[grade] << name
  
 if grade == @roster.detect {|n, g| g == grade}
-        @roster[grade] << name
+  binding.pry
+      @roster[grade] << name
     else
       @roster[grade] = []
       @roster[grade] << name
