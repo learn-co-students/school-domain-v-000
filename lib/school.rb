@@ -11,15 +11,13 @@ class School
   
   def add_student(name, grade)
     #@roster[grade] = []
-    #@roster[grade] << name 
+    #@roster[grade] << name
  
-
-    if grade == GRADES.detect {|g| g == grade}
+if grade == @roster.detect {|n, g| g == grade}
         @roster[grade] << name
     else
       @roster[grade] = []
       @roster[grade] << name
-      GRADES << grade
     end
 
     
