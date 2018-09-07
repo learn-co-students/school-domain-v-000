@@ -1,18 +1,14 @@
 class School
  
- attr_reader :roster
+  attr_reader :roster
+ 
+  def initialize(school)
+   @school=school
+    @roster= Hash.new
+  end
 
-def initialize(school)
-  @school=school
-end
-
-def roster=
-  @roster=Hash.new
-end
-
-
-  # def add_student(student)
-  #   roster << student
-  # end
+  def add_student(student)
+    roster << student
+  end
   
 end
