@@ -12,7 +12,18 @@ class School
   end
 
   def add_student(student_name, grade)
-    @roster[grade] = Array.new << student_name
+    if !@roster.include?(grade)
+      @roster[grade] = []
+      @roster[grade] << student_name
+    elsif @roster.include?(grade)
+      @roster[grade] << student_name
+    end
   end
+  
+  def grade(grade)
+    
+    
+  end
+  
   
 end
