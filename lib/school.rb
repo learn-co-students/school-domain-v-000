@@ -7,16 +7,16 @@ class School
   end
 
   def add_student(student, grade)
-    self.roster[grade] = [] unless self.roster.has_key?(grade)
-    self.roster[grade] << student
+    roster[grade] = [] unless roster.has_key?(grade)
+    roster[grade] << student
   end
 
   def grade(grade)
-    self.roster[grade]
+    roster[grade]
   end
 
   def sort
-    self.roster.each do |grade, student_array|
+    roster.each do |grade, student_array|
       student_array.sort!
     end
   end
