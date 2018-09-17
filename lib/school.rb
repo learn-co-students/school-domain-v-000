@@ -1,2 +1,9 @@
 # code here!
-school = School.new("Bayside High School")
+class school
+  attr_accessor :name, :roster
+  
+  def initialize(name)
+    @name = name
+    @roster = {}
+  end
+end
