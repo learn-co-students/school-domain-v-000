@@ -1,7 +1,7 @@
 # code here!
 
 class School 
-  attr_accessor :school_name, :name, :grade, :roster 
+  attr_accessor :school_name, :name, :grade, :roster
 
   def initialize(school_name, roster = {})
     @school_name = school_name
@@ -13,10 +13,10 @@ class School
       ( @roster[grade] ||= [] ) << name 
     end 
   
-  def grade(grade)
+  def school_grade(grade)
    @roster.each do |grade, name|
-    name 
-  end 
+     name 
+    end 
   end 
     
 end #ends class 
