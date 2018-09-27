@@ -1,22 +1,24 @@
 # code here!
 
 class School 
-  attr_accessor :school_name, :roster, :name, :grade
+  attr_accessor :school_name, :name, :grade, :roster 
 
   def initialize(school_name, roster = {})
     @school_name = school_name
-    @roster = roster 
+    @roster = {}
   end 
 
   
-  
   def add_student(name, grade)
-    roster[grade] = []
-    if roster[grade] == []
-        roster[grade] << name 
-      else roster[grade] << name 
-   end 
+      ( @roster[grade] ||= [] ) << name 
+    end 
+  
+  def grade(grade)
+   @roster.each do |grade, name|
+    name 
   end 
+  end 
+    
 end #ends class 
 
 
