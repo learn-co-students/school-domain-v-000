@@ -22,7 +22,10 @@ class School
   end 
   
  def sort
-    @roster.sort_by.to_h {|key,value| value}  
+   # @roster.sort_by.to_h {|key,value| value[name]} 
+  @roster.each do |key, value|
+  @roster[key] = value.sort{ |a,b| a[0]<=>b[0] }
+  end 
   end 
     
 end #ends class 
