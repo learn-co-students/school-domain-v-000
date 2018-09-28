@@ -13,10 +13,16 @@ class School
       ( @roster[grade] ||= [] ) << name 
     end 
   
-  def school_grade(grade)
-   @roster.each do |grade, name|
-     name 
+  def grade(grade)
+   @roster.each do |key, name|
+     if key == grade 
+       return name 
+      end 
     end 
+  end 
+  
+ def sort
+  @roster.sort_by {|key,value| [key, value]}  
   end 
     
 end #ends class 
