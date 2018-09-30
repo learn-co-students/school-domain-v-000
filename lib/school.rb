@@ -1,3 +1,5 @@
+require 'pry'
+
 class School
   attr_accessor :roster, :grade, :student_name, :add_student, :sort
   attr_reader :name
@@ -17,7 +19,11 @@ class School
   end
   
   def sort
-    new_roster = @roster[grade][student_name].values.sort
-    new_roster
+    new_hash = Hash.new
+    @roster.collect do |grade, student_name|
+      sorted = @roster[grade].sort
+      new_hash[grade] = sorted
+    end
+    new_hash
   end
 end 
