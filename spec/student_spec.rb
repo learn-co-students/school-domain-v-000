@@ -1,4 +1,4 @@
-require 'spec_helper'
+gamerequire 'spec_helper'
 
 describe 'School' do
   before :each do
