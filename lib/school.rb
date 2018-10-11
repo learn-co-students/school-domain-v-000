@@ -22,11 +22,7 @@ class School
   end
   
   def sort
-    @roster.each do |arr ay|
-      # binding.pry
-      array.sort
-      binding.pry
-    end
+    
   end
 
 end
