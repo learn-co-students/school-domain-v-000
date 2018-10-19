@@ -1,4 +1,5 @@
 # code here!
+require 'pry'
 class School
   attr_accessor :School, :roster
   
@@ -8,10 +9,12 @@ class School
   end
   
   def add_student(name, grade)
-    if roster[grade]==nil
-      roster[grade] = []
-    end
-      roster[grade] << name
+  #  if roster[grade]==nil          #this is a less efficient but functional way
+  #    roster[grade] = []           #to test if a key exists
+  #  end
+ 
+    roster[grade] ||= []            #this method is much cleaner looking!
+    roster[grade] << name
   end
   
   def grade(grade_level)
