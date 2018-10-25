@@ -1,0 +1,18 @@
+If the roster already has a key of grade 9,
+we'll be able to push 'name' into the array that the grade 9 key points to.
+Otherwise, we'll need to first create the key of grade 9 and point it to an empty array.
+
+However, if we're in the scenario in which the grade 9 key already exists,
+we will erase its current contents by creating a key of 9 and setting it equal to an empty array!
+
+# if roster has the grade key (grade 9)
+if roster.key?(grade)
+  # push the student 'name' into the array with the key of 9
+  @grades[grade] << name
+else
+  # create a whole new grade(grade is a key)
+  @grades[grade] = []
+  # add a student 'name' into that new array with
+  # the new key which is a new grade
+  @grades[grade] << name
+end
