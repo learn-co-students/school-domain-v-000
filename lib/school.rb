@@ -6,7 +6,7 @@ class School
     @roster = {}
   end
   def add_student(student, grade)
-    @roster[grade] = [] if @roster.include?(grade) == false
+    @roster[grade] ||= []
     @roster[grade] << student
   end
   def grade(level)
