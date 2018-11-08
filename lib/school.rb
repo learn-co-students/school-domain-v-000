@@ -2,13 +2,14 @@
 #1 create class School that can be initialized with a name (??)
 class School
   attr_accessor :roster, :school_name
-  attr_reader
+  @@all = []
 
 #2 roster = empty hash at initialize
 #    will be built out to contain keys of grade levels & values will be array of student names.
   def initialize(school_name)
     @roster = {}
     @school_name = school_name
+    @@all << self
   end
 
 # add data to roster hash
@@ -26,8 +27,8 @@ class School
     roster[grade]
   end
 
-  def sort(roster)
-
+  def sort
+    roster[grade][name].sort
   end
 
 # class end below
