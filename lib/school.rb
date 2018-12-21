@@ -1,12 +1,10 @@
 # school.rb
 class School # School class referredto as a 'model' in the domain model
-  attr_accessor = :name, :roster
-#  attr_reader = :roster
+  attr_accessor = :name
 
-  def initialize(name, roster = {})
-    @roster = roster #create empty hash roster upon initialization
+  def initialize(name)
+    @roster = {}  #create empty hash roster upon initialization
     @name = name
-
   end
 
   def roster
