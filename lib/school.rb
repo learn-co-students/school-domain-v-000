@@ -7,16 +7,13 @@ class School
     @roster = {}
   end
 
-  # def school_name
-  #   @school_name
-  # end
-
   def roster
     @roster
   end
 
   def add_student(student_name, grade)
     @roster[grade] ||= []
+    # ^--- if left side of "||=" is undefined, evaluate right side & set left side to the result - otherwise do nothing
     @roster[grade] << student_name
 
     # if @roster[grade] == nil
@@ -24,10 +21,17 @@ class School
     # else
     #   @roster[grade] << student_name
     # end
-
-
-
   end
 
+  def grade(grade)
+    @roster[grade]
+  end
 
-end # <--- method end
+  def sort
+    @roster.collect do |key, value_names|
+      @roster[key].sort!
+    end
+    return @roster
+  end
+
+end
