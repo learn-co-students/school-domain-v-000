@@ -32,4 +32,5 @@ class School
     end 
     results
   end 
+  
 end 
