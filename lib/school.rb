@@ -3,10 +3,11 @@ require "pry"
 class School 
   attr_accessor :grade, :roster
   attr_reader :name
-  ROSTERS = { }
+  ROSTERS = {}
   
   def initialize(name)
     @name = name
+    ROSTERS.clear
   end
 
   def roster 
@@ -14,14 +15,12 @@ class School
   end
 
   def add_student(name, grade)
-    @ROSTERS = ROSTERS
     #ROSTERS[grade] ||= ROSTERS[grade] = [ ]
-    if ROSTERS[grade] == nil && ROSTERS.include?(name) == false
+    if ROSTERS[grade] == nil
       ROSTERS[grade] = [ ]
       ROSTERS[grade] << name
     elsif ROSTERS[grade] != nil && ROSTERS[grade].include?(name) == false
       ROSTERS[grade] << name
-      #binding.pry
     end
   end
   
@@ -30,11 +29,8 @@ class School
   end
   
   def sort
-    #@ROSTERS = rosters
-    #ROSTERS.sort_by{|k, v| [v, k]}.to_h
-    ROSTERS.map do |key|
-      binding.pry
-      ROSTERS["#{key[0]}"].sort
+    ROSTERS.each do |key|
+      ROSTERS[key[0]].sort!
     end
   end
 end
