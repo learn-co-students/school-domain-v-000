@@ -45,6 +45,7 @@ describe 'School' do
     end
   end
 
+
   describe "#sort" do
     it 'is able to sort the students' do
       @school.add_student("Homer Simpson", 9)
