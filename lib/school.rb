@@ -17,10 +17,11 @@ class School
   end
 
   def sort
-    @roster.map do |grade, students|
-      @roster[grade] = students.sort
-    end
-    @roster
+    @roster.transform_values {|students| students.sort}
+    # @roster.map do |grade, students|
+    #   @roster[grade] = students.sort
+    # end
+    # @roster
   end
   
 end
