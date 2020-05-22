@@ -1,18 +1,18 @@
 # code here!
 class School
-  attr_accessor :school_name, :roster, :student_name
+  attr_reader :school_name, :roster
 
-  def initialize(school_name)
-    @school_name = school_name
+  def initialize(name)
+    @school_name = name
     @roster = {}
   end
 
   def add_student(student_name, grade)
     if @roster[grade]
-      @roster[grade].push(student_name)
+      @roster[grade] << student_name
     else
       @roster[grade] = []
-      @roster[grade].push(student_name)
+      @roster[grade] << student_name
     end
   end
 
@@ -21,9 +21,7 @@ class School
   end
 
   def sort
-    @roster.collect do |key, value|
-      value.sort!
-    end
+    @roster.collect{|grade, student_names| student_names.sort!}
     @roster
   end
 
