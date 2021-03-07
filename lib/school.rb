@@ -33,6 +33,5 @@ class School
     @roster.each do |roster_grade, roster_students|
       roster_students.sort!
     end
-  @roster
   end
 end
